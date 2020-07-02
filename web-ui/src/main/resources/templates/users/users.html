@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <head>
+        <title>User Registration</title>
+    </head>
+    <body>
+    <div th:fragment="content">    
+    	<div align="center"><label style="font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"><h2>Users  </h2></label></div>	
+    	<div align="center" >
+			<table border="1">
+				<tr bordercolor="blue">
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">UserName</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">First Name</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Last Name</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Phone</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Email</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Address1</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Address2</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">City</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">State</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Zip</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">isActive</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">password change</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">created By</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Updated By</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">created Date</label></th>
+					
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">updated Date</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Action</label></th>
+					
+				</tr>
+				<tr th:id="user.userName" th:each="user : ${usersList} " >
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;" th:text="${user.userName}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${user.firstName}"></td>
+					
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${user.lastName}"></td>
+					
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${user.phonenumber}"></td>
+					
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${user.email}"></td>
+					
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${user.address1}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${user.address2}"></td>
+					
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${user.city}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${user.state}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${user.zip }"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${user.isactive}"></td>
+					
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${user.pwdchange}"></td>
+					
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${user.createdBy}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${user.updatedBy}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${user.createdDate}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${user.updatedDate}"></td>
+					<td>
+						<a th:href="@{'/deleteUser/{userObj}(userObj=${user})}">
+        					<span>Delete</span>
+    					</a>
+    				</td>
+				</tr>
+			</table>
+	</div>
+		</div>
+</body>
+</html>

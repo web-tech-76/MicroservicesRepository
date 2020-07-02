@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>User Registration</title>
+</head>
+<body>
+
+	<div align="center">
+		<label
+			style="font-family: georgia, garamond, serif; font-size: 20px; font-style: italic;"><h2>User
+				Registration Form</h2></label>
+	</div>
+	<div th:fragment="content">
+	<div align="center">
+		<form autocomplete="off" action="#" th:action="@{create}"
+			th:object="${userRole}" method="post">
+
+			<table>
+				<tr>
+					<td><p
+							style="font-family: georgia, garamond, serif; font-size: 14px; font-style: italic;">
+							User Id:</p></td>
+					<td><select id="userdropDown" th:field="${userRole.userId}">
+							<option value="">select User</option>
+							<option th:each="user: ${userList}" th:value="${user.userName}"
+								th:text="${user.userName}"></option>
+					</select></td>
+
+				</tr>
+
+
+				<tr>
+					<td><p
+							style="font-family: georgia, garamond, serif; font-size: 14px; font-style: italic;">
+							Role Id:</p></td>
+					<td><select id="roledropDown" th:field="${userRole.roleId}">
+							<option value="">select Role</option>
+							<option th:each="role: ${roleList}" th:value="${role.roleId}"
+								th:text="${role.roleId}"></option>
+					</select></td>
+
+				</tr>
+				<tr>
+					<td><input type="submit" value="Submit" /></td>
+					<td><input type="reset" value="Clear" /></td>
+
+				</tr>
+
+			</table>
+		</form>
+	</div>
+</div>
+</body>
+</html>

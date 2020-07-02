@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="google-signin-client_id" content="764153240049-v9baih4so9saefi47d8irg92epo86r3h.apps.googleusercontent.com">
+	<title>Insert title here</title>
+	<link href="../../static/css/w3.css" th:href="@{/css/w3.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<div th:fragment="content">
+	
+ 	<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+ 
+    <div class="w3-container" >
+		<button	onclick="document.getElementById('id01').style.display='block'"  class="w3-button w3-blue w3-medium">login</button>
+		
+		<div id="id01" class="w3-modal">
+			<div class="w3-modal-content w3-card-4 w3-animate-zoom"	style="max-width: 600px">
+				<div class="w3-center">
+					<br> <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">X</span>
+				</div>
+				
+				<form class="w3-container w3-card-4" action="#" th:action="doLogin" method="POST">
+					<p>
+						<label>User</label> 
+						<input class="w3-input" type="text" name="username" id="username" th:value="*{username}" style="width: 90%" required>
+					</p>
+					<p>
+						<label>Password</label> 
+						<input class="w3-input" type="password"	name="password" id="password" th:value="*{password}" style="width: 90%" required>
+					</p>
+					<p>
+						<button class="w3-button w3-section w3-blue w3-ripple">Log in</button>
+					</p>
+					<p>
+						<a th:href="@{/userlogin}">forgot password?</a> 
+					</p>
+				</form>
+				<div onclick="document.getElementById('id01').style.display='none'"  align="center"  id="my-signin2"></div>
+  	
+			  	<script>
+			    
+			    function onSuccess(googleUser) {
+			      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+			    }
+			    
+			    function onFailure(error) {
+			      console.log(error);
+			    }
+			    
+			    function renderButton() {
+			      gapi.signin2.render('my-signin2', {
+			        'scope': 'profile email',
+			        'width': 240,
+			        'height': 50,
+			        'longtitle': true,
+			        'theme': 'dark',
+			        'onsuccess': onSuccess,
+			        'onfailure': onFailure
+			      });
+			    }
+			  </script>
+			    
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

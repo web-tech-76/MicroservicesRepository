@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Roles</title>
+    </head>
+    <body>
+    	<div th:fragment="content">    
+    	<div align="center"><label style="font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"><h2> Roles </h2></label></div>	
+    	<div align="center" >
+			<table border="1">
+				<tr bordercolor="blue">
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Role Id</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Role Name</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Description</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Created By</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Updated By</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Created Date</label></th>
+					
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Updated Date</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Action</label></th>
+					
+				</tr>
+				<tr th:id="role.roleId" th:each="role: ${rolesList} " >
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;" th:text="${role.roleId}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${role.roleName}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${role.description}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${role.createdBy}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${role.updatedBy}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${role.createdDate}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${role.updatedDate}"></td>
+					<td>
+						<a th:href="@{'/deleteRole/{roleObj}(roleObj=${role})}">
+        					<span>Delete</span>
+    					</a>
+    				</td>
+				</tr>
+			</table>
+			</div>
+		</div>			
+
+</body>
+</html>

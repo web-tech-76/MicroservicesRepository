@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" 
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <head>
+        <title>Error !</title>
+    </head>
+    <body >
+        <h1>Error </h1>
+		
+		<table>
+			<tr>
+				<td><a th:href="@{/login}">login</a> </td>
+			</tr>
+			
+			<tr>
+				<td  >Error Code</td>
+				<td  th:text="${error.errorCode}"></td>
+			</tr>
+		
+			<tr>
+				<td  >Error Message</td>
+				<td  th:text="${error.message}"></td>
+			</tr>
+		
+		</table>
+			
+    </body>
+</html>

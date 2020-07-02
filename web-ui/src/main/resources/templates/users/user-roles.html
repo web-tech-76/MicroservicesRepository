@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>User Registration</title>
+    </head>
+    <body>
+    <div th:fragment="content">
+    	<div align="center"><label style="font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"><h2>User Role Mappings  </h2></label></div>	
+    	<div align="center" >
+			<table border="1">
+				<tr bordercolor="blue">
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">UserName</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Role Id</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">created By</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Updated By</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">created Date</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">updated Date</label></th>
+					<th><label style="font-family:georgia,garamond,serif;font-size:10px;font-style:italic;">Action</label></th>
+				</tr>
+				<tr th:id="userRole.userId" th:each="userRole : ${userRolesList} " >
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;" th:text="${userRole.userId}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${userRole.roleId}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${userRole.createdBy}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${userRole.updatedBy}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${userRole.createdDate}"></td>
+					<td style="font-family:georgia,garamond,serif;font-size:12px;font-style:italic;"th:text="${userRole.updatedDate}"></td>
+					<td>
+						<a th:href="@{'/deleteUserRole/{userObj}(userObj=${userRole})}">
+        					<span>Delete</span>
+    					</a>
+    				</td>
+    			</tr>	
+			</table>
+		</div>
+		</div>		
+
+
+</body>
+</html>

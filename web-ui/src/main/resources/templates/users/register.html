@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>User Registration</title>
+    </head>
+    <body>
+ 		<div th:fragment="content">
+ 		<div align="center"><label style="font-family:georgia,garamond,serif;font-size:20px;font-style:italic;"><h2>User Registration Form</h2></label></div>
+    	<div align="center" >
+    	<form autocomplete="off" action="#" th:action="@{create}" th:object="${userView}" method="post">
+            
+            <table>
+                <tr>
+                    <td><p style="font-family:georgia,garamond,serif;font-size:14px;font-style:italic;"> User Id:</p></td>
+                    <td><input class="w3-input" type="text" name="userName" id="userName" th:value="*{userName}" style="width: 40%" required></td>
+                    <td th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}" style="color: red" ></td>	
+                 </tr>
+                
+                <tr>
+                    <td><p style="font-family:georgia,garamond,serif;font-size:14px;font-style:italic;">Password:</p></td>
+                    <td><input type="password" th:size="20" th:field="*{password}" /></td>
+                    <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red" ></td>	
+                 </tr>
+                
+                <tr>
+                    <td><p style="font-family:georgia,garamond,serif;font-size:14px;font-style:italic;">First Name:</p></td>
+                    <td><input type="text" th:size="20" th:field="*{firstName}" /></td>
+                    <td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" style="color: red" ></td>	
+                 </tr>
+                
+                <tr>
+                    <td><p style="font-family:georgia,garamond,serif;font-size:14px;font-style:italic;">Last Name:</p></td>
+                    <td><input type="text" th:size="20" th:field="*{lastName}" /></td>
+                    <td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" style="color: red" ></td>	
+                 </tr>
+                
+                <tr>
+                    <td><p style="font-family:georgia,garamond,serif;font-size:14px;font-style:italic;">Address :</p></td>
+                    <td><textarea cols="50" rows="4" th:field="*{address1}" > </textarea> </td>
+                    <td th:if="${#fields.hasErrors('address1')}" th:errors="*{address1}" style="color: red" ></td>	
+                 </tr>
+                
+                <tr>
+                    <td><p style="font-family:georgia,garamond,serif;font-size:14px;font-style:italic;">Remaining Address :</p></td>
+                    <td><textarea cols="50" rows="4" th:field="*{address2}" > </textarea> </td>
+                    <td th:if="${#fields.hasErrors('address2')}" th:errors="*{address2}" style="color: red" ></td>	
+                 </tr>
+                
+                <tr>
+                    <td><p style="font-family:georgia,garamond,serif;font-size:14px;font-style:italic;">City : </p></td>
+                    <td><input  type="text" th:size="20"  th:field="*{city}" /></td>
+                    <td th:if="${#fields.hasErrors('city')}" th:errors="*{city}" style="color: red" ></td>	
+                 </tr>
+                
+                <tr>
+                    <td><p style="font-family:georgia,garamond,serif;font-size:14px;font-style:italic;">State : </p></td>
+                    <td><input  type="text" th:size="20"  th:field="*{state}" /></td>
+                    <td th:if="${#fields.hasErrors('state')}" th:errors="*{state}" style="color: red" ></td>	
+                 </tr>
+                
+                
+                <tr>
+                    <td><p style="font-family:georgia,garamond,serif;font-size:14px;font-style:italic;">Email : </p></td>
+                    <td><input type="email" th:size="20" th:field="*{email}" /></td>
+                    <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red" ></td>	
+                 </tr>
+                
+                <tr>
+                    <td><p style="font-family:georgia,garamond,serif;font-size:14px;font-style:italic;">Phone : </p></td>
+                    <td><input  type="text" th:size="20" th:placeholder="123456789" th:default="00000000" th:field="*{phonenumber}" /></td>
+                    <td th:if="${#fields.hasErrors('phonenumber')}" th:errors="*{phonenumber}" style="color: red" ></td>	
+                 </tr>
+                
+                <tr>
+                    <td><p style="font-family:georgia,garamond,serif;font-size:14px;font-style:italic;">Zip:</p> </td>
+                    <td><input  type="text" th:size="20" th:placeholder="1234567" th:default="00000000" th:field="*{zip}" /></td>
+                    <td th:if="${#fields.hasErrors('zip')}" th:errors="*{zip}" style="color: red" ></td>	
+                 </tr>
+                 
+                 <tr>
+                 	<td>
+                 		<input type="submit" value="Register"/>
+                 	</td>
+                 	<td>
+                 		<input type="reset" value="Clear" />
+                 	</td>
+                 	
+                 </tr>
+             </table>       
+       </form>
+       </div>
+      </div> 
+    </body>
+</html>
