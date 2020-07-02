@@ -9,9 +9,8 @@
 	<name>parent.web</name>
 
 	<properties>
-		<java.version>14</java.version>
+		<java.version>13</java.version>
 	</properties>
-
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -91,10 +90,6 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-security</artifactId>
 		</dependency>
 
 		<!-- cloud -->
