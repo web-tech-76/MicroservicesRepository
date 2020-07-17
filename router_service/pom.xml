@@ -8,15 +8,12 @@
 	<name>router_service</name>
 	<description>router service for Spring Boot</description>
 
-<parent>
+	<parent>
 		<groupId>parent.web</groupId>
 		<artifactId>parent.web.app</artifactId>
 		<version>1.0</version>
 	</parent>
-	
-	<properties>
-		<java.version>14</java.version>
-	</properties>
+
 
 	<dependencies>
 		<dependency>
@@ -31,7 +28,7 @@
 		</dependency>
 		<!-- <dependency> <groupId>org.springframework.security</groupId> <artifactId>spring-security-jwt</artifactId> 
 			<version>1.1.0.RELEASE</version> </dependency> -->
-	
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -51,15 +48,7 @@
 
 
 
-	<!-- <dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Hoxton.SR4</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement> -->
+	<!-- <dependencyManagement> <dependencies> <dependency> <groupId>org.springframework.cloud</groupId> 
+		<artifactId>spring-cloud-dependencies</artifactId> <version>Hoxton.SR4</version> 
+		<type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> -->
 </project>
