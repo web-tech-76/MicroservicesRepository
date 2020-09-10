@@ -21,65 +21,6 @@ public @Data class FileDetails {
 	
 	public FileDetails() {}
 	
-	
-	
-	
-	public String get_id() {
-		return _id;
-	}
-
-
-
-
-	public void set_id(String _id) {
-		this._id = _id;
-	}
-
-
-
-
-	public String getFilename() {
-		return filename;
-	}
-
-
-
-
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
-
-
-
-
-	public String getContentType() {
-		return contentType;
-	}
-
-
-
-
-	public void setContentType(String contentType) {
-		this.contentType = contentType;
-	}
-
-
-
-
-	public String getChunkSize() {
-		return chunkSize;
-	}
-
-
-
-
-	public void setChunkSize(String chunkSize) {
-		this.chunkSize = chunkSize;
-	}
-
-
-
-
 	public FileDetails(String id, String filename, String contentType, long size){
 		this._id= id;
 		this.filename = filename;
