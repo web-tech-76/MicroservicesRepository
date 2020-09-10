@@ -22,16 +22,74 @@ public @Data class FileDetails {
 	public FileDetails() {}
 	
 	
+	
+	
+	public String get_id() {
+		return _id;
+	}
+
+
+
+
+	public void set_id(String _id) {
+		this._id = _id;
+	}
+
+
+
+
+	public String getFilename() {
+		return filename;
+	}
+
+
+
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+
+
+
+	public String getContentType() {
+		return contentType;
+	}
+
+
+
+
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
+	}
+
+
+
+
+	public String getChunkSize() {
+		return chunkSize;
+	}
+
+
+
+
+	public void setChunkSize(String chunkSize) {
+		this.chunkSize = chunkSize;
+	}
+
+
+
+
 	public FileDetails(String id, String filename, String contentType, long size){
 		this._id= id;
 		this.filename = filename;
 		this.contentType=contentType;
 				
 		double b = size;
-	    double k = size/1024.0;
-	    double m = ((size/1024.0)/1024.0);
-	    double g = (((size/1024.0)/1024.0)/1024.0);
-	    double t = ((((size/1024.0)/1024.0)/1024.0)/1024.0);
+	    double k = b/1024.0;
+	    double m = (k/1024.0);
+	    double g = (m/1024.0);
+	    double t = (g/1024.0);
 
 	    DecimalFormat dec = new DecimalFormat("0.00");
 
